@@ -6,7 +6,7 @@
 /*   By: dania <dania@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/22 17:22:00 by dania             #+#    #+#             */
-/*   Updated: 2023/07/26 23:45:25 by dania            ###   ########.fr       */
+/*   Updated: 2023/07/27 15:17:00 by dania            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int		check_input(char **av);
 t_st	*init_stack(int ac, char **av);
 
 // push swap
-void	push_swap(t_st **st_a,/*  t_st **st_b, */ int size);
+void	push_swap(t_st **st_a, t_st **st_b, int size);
 
 //	utils
 void	exit_error(t_st **st_a, t_st **st_b, char *msg);
@@ -50,6 +50,10 @@ t_st	*st_new(int value);
 void	st_add_back(t_st **stack, t_st *new);
 int		get_size(t_st *stack);
 void	set_index(t_st *st_a, int size);
+
+//	utils sort
+int	get_max_index(t_st *stack);
+int check_sort(t_st *stack);
 
 //	move swap
 void	move_sa(t_st **st_a);

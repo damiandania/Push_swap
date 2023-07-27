@@ -6,7 +6,7 @@
 /*   By: dania <dania@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 16:26:27 by dania             #+#    #+#             */
-/*   Updated: 2023/07/27 00:20:58 by dania            ###   ########.fr       */
+/*   Updated: 2023/07/27 15:16:48 by dania            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void ft_print(t_st *stack)
 int main(int ac, char **av)
 {
 	t_st	*st_a;
-	// t_st	*st_b;
+	t_st	*st_b;
 	
 	int		size;
 	
@@ -39,12 +39,12 @@ int main(int ac, char **av)
 	if (!check_input(av))
 		exit_error(NULL, NULL, ERR_INV);
 	st_a = init_stack(ac, av);
-	// st_b = NULL;
+	st_b = NULL;
 	size = get_size(st_a);
 	set_index(st_a, size);
 	
 	ft_print(st_a);
-	push_swap(&st_a,/*  &st_b,  */size);
+	push_swap(&st_a, &st_b, size);
 
 	// free_st();
 	// free_st();
