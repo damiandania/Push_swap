@@ -6,7 +6,7 @@
 /*   By: dania <dania@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/22 17:22:00 by dania             #+#    #+#             */
-/*   Updated: 2023/07/27 15:17:00 by dania            ###   ########.fr       */
+/*   Updated: 2023/08/08 01:02:56 by dania            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 
 # define ERR_INV "invalid values"
 # define ERR_LIM "value out of limits"
-
 
 typedef struct s_st
 {
@@ -44,6 +43,8 @@ void	push_swap(t_st **st_a, t_st **st_b, int size);
 
 //	utils
 void	exit_error(t_st **st_a, t_st **st_b, char *msg);
+int		pos_nb(int nb);
+void	free_st(t_st **stack);
 
 //	stack utils
 t_st	*st_new(int value);
@@ -52,8 +53,18 @@ int		get_size(t_st *stack);
 void	set_index(t_st *st_a, int size);
 
 //	utils sort
-int	get_max_index(t_st *stack);
-int check_sort(t_st *stack);
+int		get_max_index(t_st *stack);
+int 	check_sort(t_st *stack);
+void 	first_push(t_st **st_a, t_st **st_b, int size);
+
+//	utils bigsort
+void	get_target_position(t_st **st_a, t_st **st_b);
+void	get_cost(t_st **st_a, t_st **st_b);
+void	min_move(t_st **st_a, t_st **st_b);
+void	get_position(t_st **stack);
+
+//	move
+void	move(t_st **st_a, t_st **st_b, int index);
 
 //	move swap
 void	move_sa(t_st **st_a);
@@ -74,7 +85,6 @@ void	move_rra(t_st **st_a);
 void	move_rrb(t_st **st_b);
 void	move_rrr(t_st **st_a, t_st **st_b);
 
-void ft_print(t_st *stack); //BORRAR
-
+// void 	ft_print(t_st *stack); //BORRAR ////////
 
 #endif

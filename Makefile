@@ -6,7 +6,7 @@
 #    By: dania <dania@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/06 17:05:48 by ddania-c          #+#    #+#              #
-#    Updated: 2023/07/27 11:27:52 by dania            ###   ########.fr        #
+#    Updated: 2023/08/07 22:55:02 by dania            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,9 +22,12 @@ SRC_FILES	=	main.c			\
 				check_input.c	\
 				init_stack.c	\
 				utils_stack.c	\
+				utils_bigsort.c	\
+				utils_cost.c	\
 				utils_sort.c	\
 				push_swap.c		\
 				utils.c			\
+				move.c	\
 				move_swap.c		\
 				move_push.c		\
 				move_rotate.c	\

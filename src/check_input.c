@@ -6,7 +6,7 @@
 /*   By: dania <dania@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 17:19:41 by dania             #+#    #+#             */
-/*   Updated: 2023/07/24 22:52:14 by dania            ###   ########.fr       */
+/*   Updated: 2023/08/08 01:25:24 by dania            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,14 @@ static int are_all_digits(char *av)
 {
 	if (*av == '0' && av[1] != '\0')
 		return (0);
+	if (*av == '+' || *av == '-')
+	{
+		av++;
+		if (*av == '0')
+				return (0);
+	}
 	while (*av != '\0')
 	{
-		if (*av == '+' || *av == '-')
-		{
-			av++;
-			if (*av == '0')
-				return (0);
-		}
 		if (!is_digit(*av))
 			return (0);
 		else

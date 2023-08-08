@@ -6,7 +6,7 @@
 /*   By: dania <dania@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 15:54:40 by dania             #+#    #+#             */
-/*   Updated: 2023/07/25 23:44:19 by dania            ###   ########.fr       */
+/*   Updated: 2023/08/07 19:41:09 by dania            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,21 +61,22 @@ int	get_size(t_st *stack)
 
 void	set_index(t_st *st_a, int size)
 {
-	t_st	*current;
+	t_st	*tmp;
 	t_st	*max;
 	
-	while (--size > 0)
+	while (size > 0)
 	{
-		current = st_a;
+		tmp = st_a;
 		max = NULL;
-		while (current)
+		while (tmp)
 		{
-			if (current->index == 0 && (max == NULL ||
-					current->value > max->value))
-				max = current;
-			current = current->next;
+			if (tmp->index == 0 && (max == NULL ||
+					tmp->value > max->value))
+				max = tmp;
+			tmp = tmp->next;
 		}
 		if (max != NULL)
 			max->index = size;
+		size--;
 	}
 }
