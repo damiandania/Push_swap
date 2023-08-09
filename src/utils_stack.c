@@ -29,7 +29,7 @@ t_st	*st_new(int value)
 	return (new);
 }
 
-void	st_add_back(t_st **stack, t_st *new)
+void	st_add(t_st **stack, t_st *new)
 {
 	t_st *aux;
 
@@ -51,6 +51,8 @@ int	get_size(t_st *stack)
 	int	size;
 
 	size = 0;
+	if (!stack)
+		return (0);
 	while (stack)
 	{
 		stack = stack->next;
@@ -59,7 +61,7 @@ int	get_size(t_st *stack)
 	return (size);
 }
 
-void	set_index(t_st *st_a, int size)
+void	get_index(t_st *st_a, int size)
 {
 	t_st	*tmp;
 	t_st	*max;

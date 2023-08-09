@@ -30,15 +30,19 @@ int main(int ac, char **av)
 	t_st	*st_a;
 	t_st	*st_b;
 	int		size;
+	int		i;
 	
-	if (ac < 2)
-		return (0);
-	if (!check_input(av))
-		exit_error(NULL, NULL, ERR_INV);
-	st_a = init_stack(ac, av);
+	i = 1;
 	st_b = NULL;
+	while(i < ac)
+	{
+		get_args(av[i], &st_a);
+		i++;
+	}
+	if (check_duplicate(st_a))
+		exit_error(&st_a, NULL);
 	size = get_size(st_a);
-	set_index(st_a, size);
+	get_index(st_a, size);
 	push_swap(&st_a, &st_b, size);
 	// ft_print(st_a);
 	// ft_print(st_b);

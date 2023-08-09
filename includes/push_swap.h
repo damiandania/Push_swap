@@ -18,9 +18,6 @@
 # include <stdio.h>
 # include <limits.h>
 
-# define ERR_INV "invalid values"
-# define ERR_LIM "value out of limits"
-
 typedef struct s_st
 {
 	int				value;
@@ -33,29 +30,30 @@ typedef struct s_st
 }	t_st;
 
 //	check input
-int		check_input(char **av);
+int		check_input(char *av);
+void	get_args(char *av, t_st **st_a);
+int		check_duplicate(t_st *st_a);
 
-//	init stack
-t_st	*init_stack(int ac, char **av);
+//	utils stack
+t_st	*st_new(int value);
+void	st_add(t_st **stack, t_st *new);
+int		get_size(t_st *stack);
+void	get_index(t_st *st_a, int size);
 
 // push swap
 void	push_swap(t_st **st_a, t_st **st_b, int size);
 
 //	utils
-void	exit_error(t_st **st_a, t_st **st_b, char *msg);
+void	exit_error(t_st **st_a, t_st **st_b);
 int		pos_nb(int nb);
 void	free_st(t_st **stack);
-
-//	stack utils
-t_st	*st_new(int value);
-void	st_add_back(t_st **stack, t_st *new);
-int		get_size(t_st *stack);
-void	set_index(t_st *st_a, int size);
 
 //	utils sort
 int		get_max_index(t_st *stack);
 int 	check_sort(t_st *stack);
 void 	first_push(t_st **st_a, t_st **st_b, int size);
+int		get_low_pos(t_st **stack);
+void	final_rotate(t_st **st_a, int size);
 
 //	big sort
 void	get_target_position(t_st **st_a, t_st **st_b);

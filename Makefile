@@ -20,7 +20,6 @@ SRC_DIR 	= src
 
 SRC_FILES	=	main.c			\
 				check_input.c	\
-				init_stack.c	\
 				utils_stack.c	\
 				big_sort.c		\
 				cost.c			\

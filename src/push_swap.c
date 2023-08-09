@@ -12,19 +12,6 @@
 
 #include "push_swap.h"
 
-static void	final_rotate(t_st **st_a, int size)
-{
-	t_st	*tmp;
-
-	tmp = *st_a;
-	while (tmp->index != 1)
-		tmp = tmp->next;
-	if (tmp->pos < size / 2)
-		move_ra(st_a);
-	if (tmp->pos > size / 2)
-		move_rra(st_a);
-}
-
 static void	sort_of_3(t_st **stack)
 {
 	int	max_index;

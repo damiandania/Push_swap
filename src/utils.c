@@ -27,15 +27,13 @@ void	free_st(t_st **stack)
 	*stack = NULL;
 }
 
-void	exit_error(t_st **st_a, t_st **st_b, char *msg)
+void	exit_error(t_st **st_a, t_st **st_b)
 {
 	if (st_a == NULL || *st_a != NULL)
 		free_st(st_a);
 	if (st_b == NULL || *st_b != NULL)
 		free_st(st_b);
-	write(2, "Error: ", 7);
-	write(2, msg, ft_strlen(msg));
-	write(2, "\n", 1);
+	write(2, "Error\n", 6);
 	exit (1);
 }
 
