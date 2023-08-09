@@ -6,7 +6,7 @@
 /*   By: dania <dania@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/22 17:22:00 by dania             #+#    #+#             */
-/*   Updated: 2023/08/08 01:02:56 by dania            ###   ########.fr       */
+/*   Updated: 2023/08/08 16:14:21 by dania            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,14 +57,14 @@ int		get_max_index(t_st *stack);
 int 	check_sort(t_st *stack);
 void 	first_push(t_st **st_a, t_st **st_b, int size);
 
-//	utils bigsort
+//	big sort
 void	get_target_position(t_st **st_a, t_st **st_b);
 void	get_cost(t_st **st_a, t_st **st_b);
 void	min_move(t_st **st_a, t_st **st_b);
 void	get_position(t_st **stack);
 
-//	move
-void	move(t_st **st_a, t_st **st_b, int index);
+//	move best
+void	move(t_st **st_a, t_st **st_b, int cost_a, int cost_b);
 
 //	move swap
 void	move_sa(t_st **st_a);
@@ -84,7 +84,5 @@ void	move_rr(t_st **st_a, t_st **st_b);
 void	move_rra(t_st **st_a);
 void	move_rrb(t_st **st_b);
 void	move_rrr(t_st **st_a, t_st **st_b);
-
-// void 	ft_print(t_st *stack); //BORRAR ////////
 
 #endif

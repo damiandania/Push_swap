@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils_bigsort.c                                    :+:      :+:    :+:   */
+/*   big_sort.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dania <dania@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 11:26:10 by dania             #+#    #+#             */
-/*   Updated: 2023/08/08 00:31:43 by dania            ###   ########.fr       */
+/*   Updated: 2023/08/08 16:30:28 by dania            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,20 +101,21 @@ void	get_cost(t_st **st_a, t_st **st_b)
 void	min_move(t_st **st_a, t_st **st_b)
 {
 	t_st	*tmp_b;
-	int		index;
+	int		cost_a;
+	int		cost_b;
 	int		min_move;
 	
 	tmp_b = *st_b;
 	min_move = INT_MAX;
-	index = 0;
 	while (tmp_b)
 	{
 		if (pos_nb(tmp_b->cost_a) + pos_nb(tmp_b->cost_b) < min_move)
 		{
-			index = tmp_b->index;
 			min_move = pos_nb(tmp_b->cost_a) + pos_nb(tmp_b->cost_b);
+			cost_a = tmp_b->cost_a;
+			cost_b = tmp_b->cost_b;
 		}	
 		tmp_b = tmp_b->next;
 	}
-	move(st_a, st_b, index);
+	move(st_a, st_b, cost_a, cost_b);
 }

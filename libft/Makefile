@@ -6,11 +6,11 @@
 #    By: dania <dania@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/10 13:13:18 by ddania-c          #+#    #+#              #
-#    Updated: 2023/07/22 14:18:05 by dania            ###   ########.fr        #
+#    Updated: 2023/08/08 17:35:30 by dania            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	libft.a
+NAME		=	libft
 
 CC			=	cc
 
@@ -83,8 +83,10 @@ OBJ			=	$(SRC:.c=.o)
 
 GREEN	= \033[0;32m
 BLUE	= \033[0;34m
-ORANGE	= \033[0;33m
+WHITE	= \033[0;97m
 RESET	= \033[0m
+YELLOW	= \033[0;93m
+RED		= \033[0;31m
 
 .c.o:
 	@$(CC) $(FLAG) -c $< -o $@
@@ -92,20 +94,20 @@ RESET	= \033[0m
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	@echo "$(BLUE)Creating Libft...$(RESET)"
+	@echo -n "$(YELLOW)Compiling	${WHITE}→	$(BLUE)$(NAME)$(RESET): "
 	@ar rc $(NAME) $(OBJ)
-	@echo "$(GREEN)OK$(RESET)"
+	@echo "$(GREEN) Ok ✓$(RESET)"
 
 
 clean:
-	@echo "$(ORANGE)Deleting Libft object...$(RESET)"
+	@echo -n "$(RED)Deleting	${WHITE}→	$(RED)$(NAME) object$(RESET): "
 	@rm -rf $(OBJ)
-	@echo "$(GREEN)OK$(RESET)"
+	@echo "$(GREEN)Ok $(RED)✗$(RESET)"
 
 fclean:
-	@echo "$(ORANGE)Deleting Libft executable...$(RESET)"
+	@echo -n "$(RED)Deleting	${WHITE}→	$(RED)$(NAME) executable$(RESET): "
 	@rm -rf $(NAME)
-	@echo "$(GREEN)OK$(RESET)"
+	@echo "$(GREEN)Ok $(RED)✗$(RESET)"
 
 re: fclean all
 
