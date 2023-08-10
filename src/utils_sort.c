@@ -43,7 +43,7 @@ void first_push(t_st **st_a, t_st **st_b, int size)
 	int	i;
 	counter = 0;
 	i = 0;
-	while (i < size && counter < (size / 2 && size > 6))
+	while (size > 6 && i < size && counter < size / 2)
 	{
 		if ((*st_a)->index <= (size / 2))
 		{
