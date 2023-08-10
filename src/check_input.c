@@ -59,7 +59,10 @@ void	get_args(char *av, t_st **st_a)
 	long int	nb;
 	int			i;
 
+	if (!av)
+		exit (1);
 	args = ft_split(av, ' ');
+	
 	i = 0;
 	while (args[i])
 	{
