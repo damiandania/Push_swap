@@ -22,7 +22,6 @@ SRC_FILES	=	main.c			\
 				check_input.c	\
 				utils_stack.c	\
 				big_sort.c		\
-				cost.c			\
 				utils_sort.c	\
 				push_swap.c		\
 				utils.c			\
