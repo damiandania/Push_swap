@@ -6,13 +6,13 @@
 /*   By: ddania-c <ddania-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 17:19:41 by dania             #+#    #+#             */
-/*   Updated: 2023/09/04 16:46:58 by ddania-c         ###   ########.fr       */
+/*   Updated: 2023/09/04 18:33:26 by ddania-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	check_input(char *av)
+long	check_input(char *av)
 {
 	int	i;
 
@@ -33,7 +33,6 @@ void	get_args(char *av, t_st **st_a)
 	char		**args;
 	long int	nb;
 	int			i;
-
 	args = ft_split(av, ' ');
 	i = 0;
 	while (args[i])

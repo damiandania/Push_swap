@@ -6,7 +6,7 @@
 /*   By: ddania-c <ddania-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/22 17:22:00 by dania             #+#    #+#             */
-/*   Updated: 2023/09/04 15:37:42 by ddania-c         ###   ########.fr       */
+/*   Updated: 2023/09/04 17:10:16 by ddania-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ typedef struct s_st
 }	t_st;
 
 //	check input
-int		check_input(char *av);
+long	check_input(char *av);
 void	get_args(char *av, t_st **st_a);
 int		check_duplicate(t_st *st_a);
 
