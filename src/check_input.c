@@ -3,43 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   check_input.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dania <dania@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ddania-c <ddania-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 17:19:41 by dania             #+#    #+#             */
-/*   Updated: 2023/08/08 01:25:24 by dania            ###   ########.fr       */
+/*   Updated: 2023/09/04 16:46:58 by ddania-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// static int is_digit(int c) 
-// {
-// 	return (c >= '0' && c <= '9');
-// }
-
-// static int are_all_digits(char *av)
-// {
-// 	if (*av == '0' && av[1] != '\0')
-// 		return (0);
-// 	if (*av == '+' || *av == '-')
-// 	{
-// 		av++;
-// 		if (*av == '0')
-// 				return (0);
-// 	}
-// 	while (*av != '\0')
-// 	{
-// 		if (!is_digit(*av))
-// 			return (0);
-// 		else
-// 			av++;
-// 	}
-// 	return 1;
-// }
-
-int check_input(char *av)
+int	check_input(char *av)
 {
-	int i;;
+	int	i;
 
 	i = 0;
 	if ((av[i] == '-' || av[i] == '+') && (ft_strlen(av) > 1))
@@ -47,7 +22,7 @@ int check_input(char *av)
 	while (av[i])
 	{
 		if (av[i] < '0' || av[i] > '9')
-			return	(0);
+			return (0);
 		i++;
 	}
 	return (1);
@@ -60,7 +35,6 @@ void	get_args(char *av, t_st **st_a)
 	int			i;
 
 	args = ft_split(av, ' ');
-	
 	i = 0;
 	while (args[i])
 	{
@@ -72,7 +46,7 @@ void	get_args(char *av, t_st **st_a)
 			st_add(st_a, st_new(nb));
 		}
 		else
-			exit_error(st_a, NULL);	
+			exit_error(NULL, NULL);
 		free(args[i]);
 		i++;
 	}

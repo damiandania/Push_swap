@@ -6,7 +6,7 @@
 /*   By: ddania-c <ddania-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 14:12:01 by ddania-c          #+#    #+#             */
-/*   Updated: 2023/05/20 13:57:57 by ddania-c         ###   ########.fr       */
+/*   Updated: 2023/09/04 15:18:06 by ddania-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,34 +63,6 @@ char	*reserve_to_line(char *reserve)
 	return (line);
 }
 
-char	*buffer_to_reserve(char *reserve, char *buffer)
-{
-	int		i;
-	int		j;
-	char	*dest;
-
-	if (!reserve)
-	{
-		reserve = malloc(sizeof(char) * 1);
-		reserve[0] = '\0';
-	}
-	if (!reserve || !buffer)
-		return (NULL);
-	dest = malloc(sizeof(char *)
-			* ((int)ft_strlen(reserve) + (int)ft_strlen(buffer) + 1));
-	if (!dest)
-		return (NULL);
-	i = -1;
-	while (reserve[++i] != '\0')
-		dest[i] = reserve[i];
-	j = 0;
-	while (buffer[j] != '\0')
-		dest[i++] = buffer[j++];
-	dest[i] = '\0';
-	free(reserve);
-	return (reserve = dest);
-}
-
 char	*read_and_reserve(int fd, char *reserve)
 {
 	char	*buffer;
@@ -134,16 +106,18 @@ char	*get_next_line(int fd)
 	return (line);
 }
 
-int main (void)
+int	main(void)
 {
-	int	fd = open("test.txt", O_RDONLY);
+	int		fd;
 	char	*line;
-	line= get_next_line(fd);
-	while(line != NULL)
+
+	fd = open("test.txt", O_RDONLY);
+	line = get_next_line(fd);
+	while (line != NULL)
 	{
-		printf("%s", line);
+		write(1, line, ft_strlen(line));
 		free(line);
-		line= get_next_line(fd);
+		line = get_next_line(fd);
 	}
 	close(fd);
 	return (0);

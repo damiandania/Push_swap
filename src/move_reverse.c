@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   move_reverse.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dania <dania@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ddania-c <ddania-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 14:38:54 by dania             #+#    #+#             */
-/*   Updated: 2023/07/27 00:19:34 by dania            ###   ########.fr       */
+/*   Updated: 2023/09/04 15:35:46 by ddania-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static void	reverse(t_st **stack)
 	t_st	*last;
 
 	if (*stack == NULL || (*stack)->next == NULL)
-		return;
+		return ;
 	tmp = *stack;
 	while (tmp->next->next != NULL)
 		tmp = tmp->next;

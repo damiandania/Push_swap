@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dania <dania@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ddania-c <ddania-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 17:14:52 by dania             #+#    #+#             */
-/*   Updated: 2023/07/22 15:08:10 by dania            ###   ########.fr       */
+/*   Updated: 2023/09/04 15:12:58 by ddania-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-int ft_strcmp(const char *s1, const char *s2)
+int	ft_strcmp(const char *s1, const char *s2)
 {
-    if (*s1 == '+')
+	if (*s1 == '+')
 	{
 		if (*s2 != '+')
 			s1++;
@@ -24,11 +24,10 @@ int ft_strcmp(const char *s1, const char *s2)
 		if (*s2 == '+')
 			s2++;
 	}
-    while (*s1 && (*s1 == *s2))
-    {
-        s1++;
-        s2++;
-    }
-
-    return (*(unsigned char *)s1 - *(unsigned char *)s2);
+	while (*s1 && (*s1 == *s2))
+	{
+		s1++;
+		s2++;
+	}
+	return (*(unsigned char *)s1 - *(unsigned char *)s2);
 }

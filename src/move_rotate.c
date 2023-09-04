@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   move_rotate.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dania <dania@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ddania-c <ddania-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 14:38:24 by dania             #+#    #+#             */
-/*   Updated: 2023/07/26 17:03:36 by dania            ###   ########.fr       */
+/*   Updated: 2023/09/04 15:28:46 by ddania-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static void	rotate(t_st **stack)
 	t_st	*last;
 
 	if (*stack == NULL || (*stack)->next == NULL)
-		return;
+		return ;
 	tmp = *stack;
 	*stack = (*stack)->next;
 	last = *stack;

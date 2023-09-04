@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dania <dania@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ddania-c <ddania-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 11:26:10 by dania             #+#    #+#             */
-/*   Updated: 2023/08/07 23:24:11 by dania            ###   ########.fr       */
+/*   Updated: 2023/09/04 15:33:16 by ddania-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,12 @@ int	get_max_index(t_st *stack)
 			max_index = stack->index;
 		stack = stack->next;
 	}
-	return (max_index);	
+	return (max_index);
 }
 
-int check_sort(t_st *stack)
+int	check_sort(t_st *stack)
 {
-	while (stack->next != NULL)   
+	while (stack->next != NULL)
 	{
 		if (stack->value > stack->next->value)
 			return (0);
@@ -37,10 +37,11 @@ int check_sort(t_st *stack)
 	return (1);
 }
 
-void first_push(t_st **st_a, t_st **st_b, int size)
+void	first_push(t_st **st_a, t_st **st_b, int size)
 {
 	int	counter;
 	int	i;
+
 	counter = 0;
 	i = 0;
 	while (size > 6 && i < size && counter < size / 2)
@@ -52,7 +53,7 @@ void first_push(t_st **st_a, t_st **st_b, int size)
 		}
 		else
 			move_ra(st_a);
-		i++;	
+		i++;
 	}
 	while (counter != (size - 3))
 	{
@@ -84,7 +85,7 @@ int	get_low_pos(t_st **stack)
 
 void	final_rotate(t_st **st_a, int size)
 {
-int	low_pos;
+	int	low_pos;
 
 	low_pos = get_low_pos(st_a);
 	if (low_pos > size / 2)

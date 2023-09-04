@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils_stack.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dania <dania@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ddania-c <ddania-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 15:54:40 by dania             #+#    #+#             */
-/*   Updated: 2023/08/07 19:41:09 by dania            ###   ########.fr       */
+/*   Updated: 2023/09/04 16:47:06 by ddania-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,19 +31,19 @@ t_st	*st_new(int value)
 
 void	st_add(t_st **stack, t_st *new)
 {
-	t_st *aux;
+	t_st	*aux;
 
 	if (!new)
-		return;
+		return ;
 	if (*stack == NULL)
-		*stack = new;
-	else
 	{
-		aux = *stack;
-		while (aux->next != NULL)
-			aux = aux->next;
-		aux->next = new;
+		*stack = new;
+		return ;
 	}
+	aux = *stack;
+	while (aux && aux->next != NULL)
+		aux = aux->next;
+	aux->next = new;
 }
 
 int	get_size(t_st *stack)
@@ -65,15 +65,15 @@ void	get_index(t_st *st_a, int size)
 {
 	t_st	*tmp;
 	t_st	*max;
-	
+
 	while (size > 0)
 	{
 		tmp = st_a;
 		max = NULL;
 		while (tmp)
 		{
-			if (tmp->index == 0 && (max == NULL ||
-					tmp->value > max->value))
+			if (tmp->index == 0
+				&& (max == NULL || tmp->value > max->value))
 				max = tmp;
 			tmp = tmp->next;
 		}

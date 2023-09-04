@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   big_sort.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dania <dania@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ddania-c <ddania-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 11:26:10 by dania             #+#    #+#             */
-/*   Updated: 2023/08/08 16:30:28 by dania            ###   ########.fr       */
+/*   Updated: 2023/09/04 15:45:04 by ddania-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,10 @@ void	get_position(t_st **stack)
 	}
 }
 
-static int get_target(t_st **st_a, int	b_index, int target)
+static int	get_target(t_st **st_a, int b_index, int target, int i)
 {
 	t_st	*tmp;
-	int		i;
-	
-	i = INT_MAX;
+
 	tmp = *st_a;
 	while (tmp)
 	{
@@ -62,14 +60,14 @@ void	get_target_position(t_st **st_a, t_st **st_b)
 {
 	t_st	*tmp_b;
 	int		target;
-	
+
 	tmp_b = *st_b;
 	target = 0;
 	get_position(st_a);
 	get_position(st_b);
 	while (tmp_b)
 	{
-		target = get_target(st_a, tmp_b->index, target);
+		target = get_target(st_a, tmp_b->index, target, INT_MAX);
 		tmp_b->target = target;
 		tmp_b = tmp_b->next;
 	}
@@ -104,7 +102,7 @@ void	min_move(t_st **st_a, t_st **st_b)
 	int		cost_a;
 	int		cost_b;
 	int		min_move;
-	
+
 	tmp_b = *st_b;
 	min_move = INT_MAX;
 	while (tmp_b)
@@ -114,7 +112,7 @@ void	min_move(t_st **st_a, t_st **st_b)
 			min_move = pos_nb(tmp_b->cost_a) + pos_nb(tmp_b->cost_b);
 			cost_a = tmp_b->cost_a;
 			cost_b = tmp_b->cost_b;
-		}	
+		}
 		tmp_b = tmp_b->next;
 	}
 	move(st_a, st_b, cost_a, cost_b);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   move_best.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dania <dania@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ddania-c <ddania-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 22:45:31 by dania             #+#    #+#             */
-/*   Updated: 2023/08/08 16:38:46 by dania            ###   ########.fr       */
+/*   Updated: 2023/09/04 15:37:19 by ddania-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ static void	rotate_b(t_st **st_b, int *cost_b)
 	}
 }
 
-static void	double_rrr(t_st **st_a, t_st ** st_b, int *cost_a, int *cost_b)
+static void	double_rrr(t_st **st_a, t_st **st_b, int *cost_a, int *cost_b)
 {
 	while (*cost_a < 0 && *cost_b < 0)
 	{
@@ -56,7 +56,7 @@ static void	double_rrr(t_st **st_a, t_st ** st_b, int *cost_a, int *cost_b)
 	}
 }
 
-static void	double_rr(t_st **st_a, t_st ** st_b, int *cost_a, int *cost_b)
+static void	double_rr(t_st **st_a, t_st **st_b, int *cost_a, int *cost_b)
 {
 	while (*cost_a > 0 && *cost_b > 0)
 	{

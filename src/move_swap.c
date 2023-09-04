@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   move_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dania <dania@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ddania-c <ddania-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 14:37:49 by dania             #+#    #+#             */
-/*   Updated: 2023/07/26 16:41:35 by dania            ###   ########.fr       */
+/*   Updated: 2023/09/04 15:36:07 by ddania-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static void	swap(t_st *stack)
 	int	temp;
 
 	if (stack == NULL || stack->next == NULL)
-		return;
+		return ;
 	temp = stack->value;
 	stack->value = stack->next->value;
 	stack->next->value = temp;
