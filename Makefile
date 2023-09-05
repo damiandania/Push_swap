@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: dania <dania@student.42.fr>                +#+  +:+       +#+         #
+#    By: ddania-c <ddania-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/06 17:05:48 by ddania-c          #+#    #+#              #
-#    Updated: 2023/08/08 17:34:50 by dania            ###   ########.fr        #
+#    Updated: 2023/09/05 13:49:51 by ddania-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,9 +29,9 @@ SRC_FILES	=	main.c			\
 				move_swap.c		\
 				move_push.c		\
 				move_rotate.c	\
-				move_reverse.c	
+				move_reverse.c
 
-SRC := $(addprefix $(SRC_DIR)/, $(SRC_FILES))	
+SRC := $(addprefix $(SRC_DIR)/, $(SRC_FILES))
 
 # Objects
 OBJ_DIR		= obj
@@ -86,42 +86,5 @@ fclean: clean
 bonus: all
 
 re: fclean all
-
-test2:				$(NAME)	
-					$(eval ARG = $(shell shuf -i 0-100 -n 2))
-					./push_swap $(ARG) #| ./checker_linux $(ARG)
-					@echo -n "Instructions: "
-					@./push_swap $(ARG) | wc -l
-
-test3:				$(NAME)	
-					$(eval ARG = $(shell shuf -i 0-100 -n 3))
-					./push_swap $(ARG) | ./checker_linux $(ARG)
-					@echo -n "Instructions: "
-					@./push_swap $(ARG) | wc -l
-
-test5:				$(NAME)	
-					$(eval ARG = $(shell shuf -i 0-5000 -n 5))
-					./push_swap $(ARG) | ./checker_linux $(ARG)
-					@echo -n "Instructions: "
-					@./push_swap $(ARG) | wc -l
-
-test100:			$(NAME)	
-					$(eval ARG = $(shell shuf -i 0-5000 -n 100))
-					./push_swap $(ARG) | ./checker_linux $(ARG)
-					@echo -n "Instructions: "
-					@./push_swap $(ARG) | wc -l
-
-test500:			$(NAME)	
-					$(eval ARG = $(shell shuf -i 0-5000 -n 500))
-					./push_swap $(ARG) | ./checker_linux $(ARG)
-					@echo -n "Instructions: "
-					@./push_swap $(ARG) | wc -l
-
-test1000:			$(NAME)	
-					$(eval ARG = $(shell shuf -i 0-5000 -n 1000))
-					./push_swap $(ARG) | ./checker_linux $(ARG)
-					@echo -n "Instructions: "
-					@./push_swap $(ARG) | wc -l
-
 
 .PHONY: all clean fclean re test2 test3 test5 test100 test500 test1000
