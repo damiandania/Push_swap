@@ -6,7 +6,7 @@
 #    By: ddania-c <ddania-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/10 13:13:18 by ddania-c          #+#    #+#              #
-#    Updated: 2023/09/04 17:21:13 by ddania-c         ###   ########.fr        #
+#    Updated: 2023/09/08 18:40:35 by ddania-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -82,7 +82,6 @@ INC			=	libft.h
 OBJ			=	$(SRC:.c=.o)
 
 GREEN	= \033[0;32m
-BLUE	= \033[0;34m
 WHITE	= \033[0;97m
 RESET	= \033[0m
 YELLOW	= \033[0;93m
@@ -94,20 +93,20 @@ RED		= \033[0;31m
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	@echo -n "$(YELLOW)Compiling	${WHITE}→	$(BLUE)$(NAME)$(RESET): "
+	@echo -n "$(YELLOW)Compiling	${WHITE}→	$(YELLOW)$(NAME)$(RESET) "
 	@ar rc $(NAME) $(OBJ)
-	@echo "$(GREEN) Ok ✓$(RESET)"
+	@echo "$(GREEN)[ok]✓$(RESET)"
 
 
 clean:
-	@echo -n "$(RED)Deleting	${WHITE}→	$(RED)$(NAME) object$(RESET): "
+	@echo -n "$(RED)Deleting	${WHITE}→	$(RED)$(NAME) object$(RESET) "
 	@rm -rf $(OBJ)
-	@echo "$(GREEN)Ok $(RED)✗$(RESET)"
+	@echo "$(GREEN)[ok]$(RED)✗$(RESET)"
 
 fclean:
-	@echo -n "$(RED)Deleting	${WHITE}→	$(RED)$(NAME) executable$(RESET): "
+	@echo -n "$(RED)Deleting	${WHITE}→	$(RED)$(NAME) executable$(RESET) "
 	@rm -rf $(NAME)
-	@echo "$(GREEN)Ok $(RED)✗$(RESET)"
+	@echo "$(GREEN)[ok]$(RED)✗$(RESET)"
 
 re: fclean all
 

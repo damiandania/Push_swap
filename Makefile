@@ -6,7 +6,7 @@
 #    By: ddania-c <ddania-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/06 17:05:48 by ddania-c          #+#    #+#              #
-#    Updated: 2023/09/05 13:49:51 by ddania-c         ###   ########.fr        #
+#    Updated: 2023/09/08 18:42:32 by ddania-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,8 +53,6 @@ RED		=	\033[0;31m
 WHITE	=	\033[0;97m
 RESET	=	\033[0m
 YELLOW 	=	\033[0;93m
-ORANGE	=	\033[38;5;209m
-
 
 all: $(NAME)
 
@@ -65,23 +63,25 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 
 # Objects rule
 $(NAME): $(OBJS)
+	@echo -n "Verifying	${WHITE}→	norminette"
+	@if norminette | grep "Error" > /dev/null 2>&1; then echo "$(RED) [Error]✗$(RESET)"; else echo "$(GREEN) [ok]✓$(RESET)"; fi
 	@make -C ${LIBFT_DIR} --no-print-directory
-	@echo -n "$(YELLOW)Compiling	${WHITE}→	$(GREEN)$(NAME)$(RESET): "
+	@echo -n "$(YELLOW)Compiling	${WHITE}→	$(YELLOW)$(NAME)$(RESET) "
 	@$(CC) $(OBJS) $(LFLAGS) -o $@
-	@echo "$(GREEN) Ok ✓$(RESET)"
+	@echo "$(GREEN)[ok]✓$(RESET)"
 
 # Clean rules
 clean:
 	@make clean -C ${LIBFT_DIR} --no-print-directory
-	@echo -n "$(RED)Deleting	${WHITE}→	$(RED)$(NAME) object$(RESET): "
+	@echo -n "$(RED)Deleting	${WHITE}→	$(RED)$(NAME) object$(RESET) "
 	@$(RM) -r $(OBJ_DIR)
-	@echo "$(GREEN)Ok $(RED)✗$(RESET)"
+	@echo "$(GREEN)[ok]$(RED)✗$(RESET)"
 
 fclean: clean
 	@make fclean -C ${LIBFT_DIR} --no-print-directory
-	@echo -n "$(RED)Deleting	${WHITE}→	$(RED)$(NAME) executable$(RESET): "
+	@echo -n "$(RED)Deleting	${WHITE}→	$(RED)$(NAME) executable$(RESET) "
 	@$(RM) $(NAME)
-	@echo "$(GREEN)Ok $(RED)✗$(RESET)"
+	@echo "$(GREEN)[ok]$(RED)✗$(RESET)"
 
 bonus: all
 

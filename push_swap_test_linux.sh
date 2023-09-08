@@ -3489,8 +3489,8 @@ if [ $N -eq 0 ]; then
 else
 	printf "${RED}1. [KO]${DEF_COLOR}";
 fi
-R=$(leaks -atExit -- ./push_swap $ARG > /dev/null && echo $?)
-if [[ $R == 0 ]]; then
+R=$(valgrind --log-fd=1 ./push_swap $ARG | grep -Ec 'no leaks are possible|ERROR SUMMARY: 0')
+if [[ $R == 2 ]]; then
   printf "${GREEN}[MOK] ${DEF_COLOR}\n";
 else
   printf "${RED} [KO LEAKS] ${DEF_COLOR}\n";
@@ -3503,8 +3503,8 @@ if [ $N -eq 0 ]; then
 else
 	printf "${RED}2. [KO]${DEF_COLOR}";
 fi
-R=$(leaks -atExit -- ./push_swap $ARG > /dev/null && echo $?)
-if [[ $R == 0 ]]; then
+R=$(valgrind --log-fd=1 ./push_swap $ARG | grep -Ec 'no leaks are possible|ERROR SUMMARY: 0')
+if [[ $R == 2 ]]; then
   printf "${GREEN}[MOK] ${DEF_COLOR}\n";
 else
   printf "${RED} [KO LEAKS] ${DEF_COLOR}\n";
@@ -3517,8 +3517,8 @@ if [ $N -eq 0 ]; then
 else
 	printf "${RED}3. [KO]${DEF_COLOR}";
 fi
-R=$(leaks -atExit -- ./push_swap $ARG > /dev/null && echo $?)
-if [[ $R == 0 ]]; then
+R=$(valgrind --log-fd=1 ./push_swap $ARG | grep -Ec 'no leaks are possible|ERROR SUMMARY: 0')
+if [[ $R == 2 ]]; then
   printf "${GREEN}[MOK] ${DEF_COLOR}\n";
 else
   printf "${RED} [KO LEAKS] ${DEF_COLOR}\n";
@@ -3531,8 +3531,8 @@ if [ $N -eq 0 ]; then
 else
 	printf "${RED}4. [KO]${DEF_COLOR}";
 fi
-R=$(leaks -atExit -- ./push_swap $ARG > /dev/null && echo $?)
-if [[ $R == 0 ]]; then
+R=$(valgrind --log-fd=1 ./push_swap $ARG | grep -Ec 'no leaks are possible|ERROR SUMMARY: 0')
+if [[ $R == 2 ]]; then
   printf "${GREEN}[MOK] ${DEF_COLOR}\n";
 else
   printf "${RED} [KO LEAKS] ${DEF_COLOR}\n";
@@ -3545,8 +3545,8 @@ if [ $N -eq 0 ]; then
 else
 	printf "${RED}5. [KO]${DEF_COLOR}";
 fi
-R=$(leaks -atExit -- ./push_swap $ARG > /dev/null && echo $?)
-if [[ $R == 0 ]]; then
+R=$(valgrind --log-fd=1 ./push_swap $ARG | grep -Ec 'no leaks are possible|ERROR SUMMARY: 0')
+if [[ $R == 2 ]]; then
   printf "${GREEN}[MOK] ${DEF_COLOR}\n";
 else
   printf "${RED} [KO LEAKS] ${DEF_COLOR}\n";
@@ -3559,8 +3559,8 @@ if [ $N -eq 0 ]; then
 else
 	printf "${RED}6. [KO]${DEF_COLOR}";
 fi
-R=$(leaks -atExit -- ./push_swap $ARG > /dev/null && echo $?)
-if [[ $R == 0 ]]; then
+R=$(valgrind --log-fd=1 ./push_swap $ARG | grep -Ec 'no leaks are possible|ERROR SUMMARY: 0')
+if [[ $R == 2 ]]; then
   printf "${GREEN}[MOK] ${DEF_COLOR}\n";
 else
   printf "${RED} [KO LEAKS] ${DEF_COLOR}\n";
@@ -3573,8 +3573,8 @@ if [ $N -eq 0 ]; then
 else
 	printf "${RED}7. [KO]${DEF_COLOR}";
 fi
-R=$(leaks -atExit -- ./push_swap $ARG > /dev/null && echo $?)
-if [[ $R == 0 ]]; then
+R=$(valgrind --log-fd=1 ./push_swap $ARG | grep -Ec 'no leaks are possible|ERROR SUMMARY: 0')
+if [[ $R == 2 ]]; then
   printf "${GREEN}[MOK] ${DEF_COLOR}\n";
 else
   printf "${RED} [KO LEAKS] ${DEF_COLOR}\n";
@@ -3587,8 +3587,8 @@ if [ $N -eq 0 ]; then
 else
 	printf "${RED}8. [KO]${DEF_COLOR}";
 fi
-R=$(leaks -atExit -- ./push_swap $ARG > /dev/null && echo $?)
-if [[ $R == 0 ]]; then
+R=$(valgrind --log-fd=1 ./push_swap $ARG | grep -Ec 'no leaks are possible|ERROR SUMMARY: 0')
+if [[ $R == 2 ]]; then
   printf "${GREEN}[MOK] ${DEF_COLOR}\n";
 else
   printf "${RED} [KO LEAKS] ${DEF_COLOR}\n";
@@ -3601,8 +3601,8 @@ if [ $N -eq 0 ]; then
 else
 	printf "${RED}9. [KO]${DEF_COLOR}";
 fi
-R=$(leaks -atExit -- ./push_swap $ARG > /dev/null && echo $?)
-if [[ $R == 0 ]]; then
+R=$(valgrind --log-fd=1 ./push_swap $ARG | grep -Ec 'no leaks are possible|ERROR SUMMARY: 0')
+if [[ $R == 2 ]]; then
   printf "${GREEN}[MOK] ${DEF_COLOR}\n";
 else
   printf "${RED} [KO LEAKS] ${DEF_COLOR}\n";
@@ -3615,8 +3615,8 @@ if [ $N -eq 0 ]; then
 else
 	printf "${RED}10. [KO]${DEF_COLOR}";
 fi
-R=$(leaks -atExit -- ./push_swap $ARG > /dev/null && echo $?)
-if [[ $R == 0 ]]; then
+R=$(valgrind --log-fd=1 ./push_swap $ARG | grep -Ec 'no leaks are possible|ERROR SUMMARY: 0')
+if [[ $R == 2 ]]; then
   printf "${GREEN}[MOK] ${DEF_COLOR}\n";
 else
   printf "${RED} [KO LEAKS] ${DEF_COLOR}\n";
@@ -3629,8 +3629,8 @@ if [ $N -eq 0 ]; then
 else
 	printf "${RED}11. [KO]${DEF_COLOR}";
 fi
-R=$(leaks -atExit -- ./push_swap $ARG > /dev/null && echo $?)
-if [[ $R == 0 ]]; then
+R=$(valgrind --log-fd=1 ./push_swap $ARG | grep -Ec 'no leaks are possible|ERROR SUMMARY: 0')
+if [[ $R == 2 ]]; then
   printf "${GREEN}[MOK] ${DEF_COLOR}\n";
 else
   printf "${RED} [KO LEAKS] ${DEF_COLOR}\n";
@@ -3643,8 +3643,8 @@ if [ $N -eq 0 ]; then
 else
 	printf "${RED}12. [KO]${DEF_COLOR}";
 fi
-R=$(leaks -atExit -- ./push_swap $ARG > /dev/null && echo $?)
-if [[ $R == 0 ]]; then
+R=$(valgrind --log-fd=1 ./push_swap $ARG | grep -Ec 'no leaks are possible|ERROR SUMMARY: 0')
+if [[ $R == 2 ]]; then
   printf "${GREEN}[MOK] ${DEF_COLOR}\n";
 else
   printf "${RED} [KO LEAKS] ${DEF_COLOR}\n";
@@ -4134,9 +4134,9 @@ else
 fi
 if [ $cont -eq 5 ]; then
 
-R=$(leaks -atExit -- ./push_swap $ARG > /dev/null && echo $?)
+R=$(valgrind --log-fd=1 ./push_swap $ARG | grep -Ec 'no leaks are possible|ERROR SUMMARY: 0')
 ((cont4++))
-if [[ $R == 0 ]]; then
+if [[ $R == 2 ]]; then
   printf "${GREEN}$cont3 [MEMORY OK] ${DEF_COLOR}\n";
   ((res_3++))
 else
@@ -5103,8 +5103,8 @@ else
 	echo TEST $cont ARG:"$ARG" >> traces.txt
  	((res_2++))
 fi
-R=$(./push_swap $ARG | leaks -atExit -- ./checker $ARG > /dev/null && echo $?)
-if [[ $R == 0 ]]; then
+R=$(./push_swap $ARG | valgrind --log-fd=1 ./checker $ARG | grep -Ec 'no leaks are possible|ERROR SUMMARY: 0')
+if [[ $R == 2 ]]; then
   printf "${GREEN}[MOK] ${DEF_COLOR}";
 else
   printf "${RED} [KO LEAKS] ${DEF_COLOR}";
@@ -5127,8 +5127,8 @@ else
 	echo TEST $cont ARG:"$ARG" >> traces.txt
  	((res_2++))
 fi
-R=$(./push_swap $ARG | leaks -atExit -- ./checker $ARG > /dev/null && echo $?)
-if [[ $R == 0 ]]; then
+R=$(./push_swap $ARG | valgrind --log-fd=1 ./checker $ARG | grep -Ec 'no leaks are possible|ERROR SUMMARY: 0')
+if [[ $R == 2 ]]; then
   printf "${GREEN}[MOK] ${DEF_COLOR}";
 else
   printf "${RED} [KO LEAKS] ${DEF_COLOR}";

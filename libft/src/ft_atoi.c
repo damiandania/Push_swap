@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dania <dania@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ddania-c <ddania-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 14:27:06 by ddania-c          #+#    #+#             */
-/*   Updated: 2023/07/25 19:29:23 by dania            ###   ########.fr       */
+/*   Updated: 2023/09/08 17:59:25 by ddania-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,6 @@
 	digio que no sea numerico */
 
 #include "../includes/libft.h"
-
-// static size_t	ft_whitespace(const char *str)
-// {
-// 	size_t	i;
-
-// 	i = 0;
-// 	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
-// 		i++;
-// 	return (i);
-// }
 
 long int	ft_atoi(const char *str)
 {
