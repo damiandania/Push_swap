@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddania-c <ddania-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dania <dania@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/22 17:22:00 by dania             #+#    #+#             */
-/*   Updated: 2023/09/04 17:10:16 by ddania-c         ###   ########.fr       */
+/*   Updated: 2023/09/12 14:56:53 by dania            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ void	push_swap(t_st **st_a, t_st **st_b, int size);
 void	exit_error(t_st **st_a, t_st **st_b);
 int		pos_nb(int nb);
 void	free_st(t_st **stack);
+void	free_tab(void **tab);
 
 //	utils sort
 int		get_max_index(t_st *stack);

@@ -6,7 +6,7 @@
 /*   By: ddania-c <ddania-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 17:19:41 by dania             #+#    #+#             */
-/*   Updated: 2023/09/08 17:59:07 by ddania-c         ###   ########.fr       */
+/*   Updated: 2023/09/12 16:29:47 by ddania-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,16 +31,26 @@ long	check_input(char *av)
 void	get_args(char *av, t_st **st_a)
 {
 	long int	nb;
+	int			i;
+	char		**tab;
+	int			status;
 
-	if (check_input(av))
+	status = 0;
+	i = 0;
+	tab = ft_split(av, ' ');
+	while (tab[i])
 	{
-		nb = ft_atoi(av);
+		if (!check_input(tab[i]))
+			status = 1;
+		nb = ft_atoi(tab[i]);
 		if (nb > INT_MAX || nb < INT_MIN)
-			exit_error(st_a, NULL);
+			status = 1;
 		st_add(st_a, st_new(nb));
+		i++;
 	}
-	else
-		exit_error(NULL, NULL);
+	free_tab((void **)tab);
+	if (status == 1)
+		exit_error(st_a, NULL);
 }
 
 int	check_duplicate(t_st *st_a)
