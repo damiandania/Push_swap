@@ -7,19 +7,24 @@
 
 **Push_Swap** is an algorithm project at 42 school where the goal is to sort a list of random integers using a limited set of operations, aiming to perform the sorting with the fewest possible actions.
 
-## Status
+## Installation
 
-Completed on **05/09/2022** with a grade of **100%**.
+1. **Clone this repository:**
+    ```bash
+    git clone https://github.com/damiandania/So_long.git
+    ```
+
+2. **Navigate to the project directory:**
+    ```bash
+    cd So_long
+    ```
+
+3. **Build the project:**
+    ```bash
+    make
+    ```
 
 ## Usage
-
-First, clone the repository and navigate into it. Then compile the program by running:
-
-```bash
-make
-```
-
-To execute the program, use the following syntax:
 
 ```
 ./push_swap <numbers>
